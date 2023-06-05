@@ -29,7 +29,8 @@ class Question(models.Model):
 
 class Answer(models.Model):
     question=models.ForeignKey(Question, related_name='answer', on_delete=models.CASCADE)
-    title=models.CharField(max_length=255)
+    title=models.CharField(max_length=255,verbose_name='answer')
     isTrue=models.BooleanField(default=False)
-
+    def __str__(self):
+            return "{}".format(self.title)
 
