@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 import os
 from pathlib import Path
-from tracemalloc import Statistic
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,17 +30,6 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-
-INSTALLED_APPS = [
-    'jazzmin',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'computiq',
-]
 
 JAZZMIN_SETTINGS = {
     "site_title": "Quiz Admin",
@@ -82,6 +70,19 @@ JAZZMIN_UI_TWEAKS = {
     },
     "actions_sticky_top": False
 }
+
+INSTALLED_APPS = [
+    'jazzmin',
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_cleanup.apps.CleanupConfig',
+    'computiq',
+]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
